@@ -1,0 +1,48 @@
+@import "../../constants/variables.scss";
+
+.sidebar-container {
+    height: 100vh;
+    background-image: url("../../assets/images/sidebarBack.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-content {
+    padding: 1em;
+    @include flex-container(column, space-between, center, nowrap);
+    height: calc(100vh - 2em);
+}
+
+.sidebar-chat-container {
+    min-height: 10vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sidebar-chat-content {
+    @include flex-container(row, center, flex-start, nowrap);
+    cursor: pointer;
+
+    h4 {
+        font-weight: 500;
+        margin-right: 10px;
+        border-bottom: 1px solid white;
+    }
+}
+
+.chat-icon {
+    color: white;
+}
+
+.step-icon {
+    font-size: 38px !important;
+    margin-right: 10px;
+}
+
+.sidebar-steps-container {
+    width: 100%;
+}

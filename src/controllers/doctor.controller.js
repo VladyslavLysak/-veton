@@ -12,8 +12,19 @@ export const getAllDoctors = async (req, res) => {
     res.json({ doctors, success: true, status: 200 });
 }
 
+export const getPopularDoctors = async (req, res) => {
+    const doctors = await DoctorModel.find({ popular: true });
+    res.json({ doctors, success: true, status: 200 });
+}
+
 export const createDoctor = async (req, res) => {
     const newDoctor = new DoctorModel(req.body);
+    const similarDoctor = await DoctorModel.findOne({ email: newDoctor.email })
+
+    if (similarDoctor) {
+        return res.json({ message: "The doctor already exists", success: true, status: 400 })
+    }
+
     await newDoctor.save();
 
     res.json({ doctor: newDoctor, success: true, status: 200 })

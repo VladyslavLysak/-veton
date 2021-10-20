@@ -4,15 +4,17 @@ import {
     getAllDoctors,
     createDoctor,
     deleteDoctor,
-    editDoctor
+    editDoctor,
+    getPopularDoctors
 } from '../controllers/doctor.controller';
 
 const router = Router();
 
-router.get("/:id", getDoctor);
-router.put("/:id", editDoctor);
+router.get("/id/:id", getDoctor);
+router.put("/id/:id", editDoctor);
 router.get("/", getAllDoctors);
+router.get("/popular", getPopularDoctors);
 router.post("/add", createDoctor);
-router.delete("/:id", deleteDoctor);
+router.delete("/id/:id", deleteDoctor);
 
 export default router;

@@ -1,0 +1,26 @@
+@import "../../constants/variables";
+
+.step-container {
+    padding: 1.5em 0;
+    @include flex-container(row, center, center, nowrap);
+}
+
+.step-content {
+    @include flex-container(row, space-between, center, nowrap);
+
+    p {
+        width: 220px;
+    }
+}
+
+.active-step {
+    width: calc(100% + 2em);
+    transform: translateX(-1em);
+    background: linear-gradient(
+        90deg,
+        rgba(231, 221, 238, 1) 0%,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
