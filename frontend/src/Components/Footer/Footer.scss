@@ -1,0 +1,46 @@
+@import "../../constants/variables.scss";
+
+.footer-container {
+    padding: 48px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+
+    .footer-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .footer-container-socials {
+        display: flex;
+        justify-content: space-between;
+
+        .footer-social {
+            font-size: 36px !important;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                fill: blueviolet;
+            }
+        }
+    }
+
+    .footer-part {
+        @include flex-container(row, flex-start, flex-start, nowrap);
+        cursor: pointer;
+        margin: 15px 0;
+    
+        h4 {
+            font-weight: 500;
+            margin-left: 10px;
+            border-bottom: 1px solid black;
+            transition: 0.5s;
+        }
+
+        .part-icon {
+            fill: black;
+        }
+    }
+}

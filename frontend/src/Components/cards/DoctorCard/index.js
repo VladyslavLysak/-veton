@@ -1,18 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import doctorImage from '../../../assets/images/doctor.jpg';
+import { useSelector } from 'react-redux'
 
-import './DoctorCard.scss';
+import { selectDoctorCity } from 'Redux/reducers/citiesSlice'
 
+import DoctorCardLayout from './DoctorCard'
 
 const DoctorCard = ({ doctor }) => {
-    return (
-        <div className='doctor-card'>
-            <div className='doctor-card-container'>
-                {doctor.name}
-            </div>
-        </div>
-    );
-};
+  const activeCity = useSelector((state) =>
+    selectDoctorCity(state, doctor)
+  )
+  return <DoctorCardLayout doctor={doctor} activeCity={activeCity} />
+}
 
-export default DoctorCard;
+export default DoctorCard

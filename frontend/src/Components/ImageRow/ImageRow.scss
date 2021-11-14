@@ -1,0 +1,14 @@
+.image-row-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+  h5 {
+    margin-left: 1em;
+    font-weight: 500;
+  }
+}
+
+.row-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
