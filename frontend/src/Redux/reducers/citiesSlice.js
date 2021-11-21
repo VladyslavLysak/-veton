@@ -134,6 +134,15 @@ export const selectDoctorCity = (state, ownProps) => {
   const activeCity = cities.find((el) => el.id === ownProps.city)
   return activeCity?.name[activeLang]
 }
+export const selectCity = (state, ownProps) => {
+  const cities = state.city.cities
+  return cities.find((el) => el.id === ownProps.city)
+}
+// export const selectHospital = (state, ownProps) => {
+//   const cities = state.city.cities
+//   const hospital = cities.forEach(city => city.hospitals.find())
+//   return cities.find((el) => el.id === ownProps.city)
+// }
 
 // export const { onSearchValue } = doctorsSlice.actions;
 

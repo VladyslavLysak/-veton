@@ -5,13 +5,14 @@ const existError = 'Doctor already exists'
 
 export const fetchDoctors = createAsyncThunk(
   'doctors/fetchDoctors',
-  async ({ offset, search }) => {
-    console.log(offset)
+  async ({ offset, search, activeCity, activeHospital }) => {
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_BASE_URL}/doctors?offset=${
           offset || 6
-        }&search=${search || ''}`
+        }&search=${search || ''}&city=${activeCity || ''}&hospital=${
+          activeHospital || ''
+        }`
       )
       return response.data.doctors
     } catch (error) {

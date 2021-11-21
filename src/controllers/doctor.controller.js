@@ -7,16 +7,22 @@ export const getDoctor = async (req, res) => {
 }
 
 export const getAllDoctors = async (req, res) => {
-  const { offset, search } = req.query
+  const { offset, search, city, hospital } = req.query
   const doctors = await DoctorModel.find({
-    $expr: {
-      $regexMatch: {
-        input: { $concat: ['$name', ' ', '$surname'] },
-        regex: search,
-        options: 'i',
+    $and: [
+      { city: city },
+      { hospital: hospital },
+      {
+        $expr: {
+          $regexMatch: {
+            input: { $concat: ['$name', ' ', '$surname'] },
+            regex: search,
+            options: 'i',
+          },
+        },
       },
-    },
-  }).limit(offset)
+    ],
+  }).limit(Number(offset))
   res.json({ doctors, success: true, status: 200 })
 }
 

@@ -39,13 +39,11 @@ const PopularDoctors = ({ doctors, t }) => {
           itemClass='carousel-item-padding'
           centerMode={false}
           autoPlay
-          // showArrows
           autoPlaySpeed={3000}
-          // removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
           partialVisible>
           {doctors?.map((doctor) => (
             <DoctorCard
-              key={`popular-doctor-${doctor.id}`}
+              key={`popular-doctor-${doctor._id}`}
               doctor={doctor}
             />
           ))}

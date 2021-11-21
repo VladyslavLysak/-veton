@@ -1,0 +1,30 @@
+.choose-block {
+  margin-top: 30px;
+}
+
+.choose-button-container {
+  margin-right: 15px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.doctors-container {
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      width: 33%;
+    }
+  }
+}
+
+.button-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
